@@ -1,4 +1,3 @@
-// Bullet.cs
 using UnityEngine;
 
 public class Bullet : MonoBehaviour

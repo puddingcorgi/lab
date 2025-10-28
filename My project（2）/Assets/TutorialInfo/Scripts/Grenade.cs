@@ -1,4 +1,3 @@
-// Grenade.cs
 using UnityEngine;
 
 public class Grenade : MonoBehaviour
@@ -21,7 +20,7 @@ public class Grenade : MonoBehaviour
     {
         hasExploded = true;
 
-        // 物理效果
+        
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider col in colliders)
         {

@@ -1,4 +1,3 @@
-// WeaponManager.cs
 using UnityEngine;
 
 public class WeaponManager : MonoBehaviour

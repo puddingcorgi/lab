@@ -1,4 +1,3 @@
-// WeaponPickup.cs
 using UnityEngine;
 
 public class WeaponPickup : MonoBehaviour
@@ -29,10 +28,10 @@ public class WeaponPickup : MonoBehaviour
     {
         if (isActive)
         {
-            // 旋转动画
+            
             transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
 
-            // 浮动动画
+            
             float newY = startPosition.y + Mathf.Sin(Time.time * floatSpeed) * floatHeight;
             transform.position = new Vector3(transform.position.x, newY, transform.position.z);
         }

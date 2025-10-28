@@ -1,4 +1,3 @@
-// PhysicsTarget.cs
 using UnityEngine;
 
 public class PhysicsTarget : MonoBehaviour
