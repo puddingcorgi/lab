@@ -934,7 +934,7 @@ MonoBehaviour:
   respawnTime: 5
   handgunMaterial: {fileID: 0}
   machineGunMaterial: {fileID: 0}
-  grenadeMaterial: {fileID: 0}
+  grenadeMaterial: {fileID: 2100000, guid: 201ee89648385824f9d9b6f887f5d327, type: 2}
   rotationSpeed: 50
   floatHeight: 0.5
   floatSpeed: 2
@@ -1072,7 +1072,7 @@ GameObject:
   - component: {fileID: 1264190810}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1498,7 +1498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 0
   respawnTime: 5
-  handgunMaterial: {fileID: 0}
+  handgunMaterial: {fileID: 2100000, guid: cd77b39f8f387b842b33d3a70eae2ffc, type: 2}
   machineGunMaterial: {fileID: 0}
   grenadeMaterial: {fileID: 0}
   rotationSpeed: 50
@@ -1656,7 +1656,7 @@ MonoBehaviour:
   weaponType: 1
   respawnTime: 5
   handgunMaterial: {fileID: 0}
-  machineGunMaterial: {fileID: 0}
+  machineGunMaterial: {fileID: 2100000, guid: 81d6b1d813401b64f83d3fd076c4abb4, type: 2}
   grenadeMaterial: {fileID: 0}
   rotationSpeed: 50
   floatHeight: 0.5
