@@ -1,41 +1,32 @@
 ﻿using UnityEngine;
+using System.Reflection;
 using UnityEngine.UI;
 
-public class SimpleTextCharge : MonoBehaviour
+public class ChargeText : MonoBehaviour
 {
     public Text chargeText;
-    private float chargeTimer = 0f;
-
-    void Start()
-    {
-        if (chargeText != null)
-        {
-            chargeText.gameObject.SetActive(false);
-        }
-    }
 
     void Update()
     {
-        // 鼠标左键蓄力
-        if (Input.GetMouseButton(0))
-        {
-            chargeTimer += Time.deltaTime;
-            float progress = Mathf.Clamp01(chargeTimer / 3f);
-            int percentage = Mathf.RoundToInt(progress * 100);
+        WeaponManager weapon = FindObjectOfType<WeaponManager>();
+        if (weapon == null) return;
 
-            if (chargeText != null)
-            {
-                chargeText.gameObject.SetActive(true);
-                chargeText.text = $"{percentage}%";
-            }
+        var currentWeapon = weapon.GetType().GetField("currentWeapon", BindingFlags.Public | BindingFlags.Instance).GetValue(weapon);
+        var isCharging = (bool)weapon.GetType().GetField("isCharging", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(weapon);
+        var chargeTime = (float)weapon.GetType().GetField("grenadeChargeTime", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(weapon);
+        var maxCharge = (float)weapon.GetType().GetField("maxGrenadeCharge", BindingFlags.Public | BindingFlags.Instance).GetValue(weapon);
+
+        bool shouldShow = currentWeapon.ToString() == "Grenade" && isCharging;
+
+        if (shouldShow)
+        {
+            int percent = (int)(chargeTime / maxCharge * 100);
+            chargeText.text = $"Charge: {percent}%";
+            chargeText.gameObject.SetActive(true);
         }
         else
         {
-            chargeTimer = 0f;
-            if (chargeText != null)
-            {
-                chargeText.gameObject.SetActive(false);
-            }
+            chargeText.gameObject.SetActive(false);
         }
     }
 }
