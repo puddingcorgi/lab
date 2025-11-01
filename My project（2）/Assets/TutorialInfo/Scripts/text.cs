@@ -8,7 +8,7 @@ public class ChargeText : MonoBehaviour
 
     void Update()
     {
-        WeaponManager weapon = FindObjectOfType<WeaponManager>();
+        WeaponManager weapon = Object.FindAnyObjectByType<WeaponManager>();
         if (weapon == null) return;
 
         var currentWeapon = weapon.GetType().GetField("currentWeapon", BindingFlags.Public | BindingFlags.Instance).GetValue(weapon);
